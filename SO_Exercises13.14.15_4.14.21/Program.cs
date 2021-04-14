@@ -13,7 +13,7 @@ namespace SO_Exercises13._14._15_4._14._21
             while (keepLoop)
             {
 
-                Console.WriteLine("Please give me a number!");
+                Console.WriteLine("Please enter a number!");
                 string userInput = Console.ReadLine();
 
                 int number = int.Parse(userInput);
@@ -28,7 +28,7 @@ namespace SO_Exercises13._14._15_4._14._21
 
                 if (userContinue == "y")
                 {
-                    keepLoop = true;
+                   continue;
                 }
                 else
                 {
@@ -46,7 +46,7 @@ namespace SO_Exercises13._14._15_4._14._21
             while (keepLoop)
             {
 
-                Console.WriteLine("Please give me a number!");
+                Console.WriteLine("Please enter a number!");
                 string userInput = Console.ReadLine();
 
                 int number = int.Parse(userInput);
@@ -63,7 +63,7 @@ namespace SO_Exercises13._14._15_4._14._21
 
                 if (userContinue == "y")
                 {
-                    keepLoop = true;
+                    continue;
                 }
                 else
                 {
@@ -77,35 +77,42 @@ namespace SO_Exercises13._14._15_4._14._21
              //Exercise 15: Prompt user for a number. Use a for loop to output the cubes of all the numbers from that number to 0.
 
              bool keepLoop = true;
-
-             while (keepLoop)
+            
+            while (keepLoop)
              {
+                
+                try
+                {
+                    Console.WriteLine("Please enter a number!");
+                    string userInput = Console.ReadLine();
 
-                 Console.WriteLine("Please give me a number!");
-                 string userInput = Console.ReadLine();
+                    int number = int.Parse(userInput);
+                    int cube;
 
-                 int number = int.Parse(userInput);
-                 int cube;
+                    for (int i = 1; i <= number; i++)
+                    {
+                        cube = i * i * i;
+                        Console.WriteLine(cube);
+                    }
 
-                 for (int i = 1; i <= number; i++)
-                 {
-                     cube = i * i * i;
-                     Console.WriteLine(cube);
-                 }
+                    Console.WriteLine("Would you like to play again? y/n");
+                    string userContinue = Console.ReadLine();
 
-                 Console.WriteLine("Would you like to play again? y/n");
-                 string userContinue = Console.ReadLine();
+                    if (userContinue == "y")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Console.WriteLine("bye!");
+                        break;
+                    }
+                }
 
-                 if (userContinue == "y")
-                 {
-                     keepLoop = true;
-                 }
-                 else
-                 {
-                     Console.WriteLine("bye!");
-                     break;
-                 }
-
+                    catch
+                {
+                    Console.WriteLine("That's not a number...");
+                }
              }  
         }
     }
